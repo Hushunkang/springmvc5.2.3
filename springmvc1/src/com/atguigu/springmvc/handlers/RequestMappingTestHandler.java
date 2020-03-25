@@ -4,6 +4,10 @@ import com.atguigu.springmvc.domain.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.Writer;
 import java.lang.reflect.Method;
 
 /**
@@ -200,5 +204,33 @@ public class RequestMappingTestHandler {
         System.out.println("testPojo user:" + user);
         return SUCCESS;
     }
+
+    /**
+     *
+     * 可以使用Servlet原生的API作为目标方法的参数，具体支持以下类型
+     * HttpServletRequest
+     * HttpServletResponse
+     * HttpSession
+     * java.security.Principal
+     * Locale InputStream
+     * OutputStream
+     * Reader
+     * Writer
+     *
+     * @param request
+     * @param response
+     * @param out
+     * @return
+     */
+    @RequestMapping(value="/testServletApi")
+    public void testServletApi(HttpServletRequest request,
+                                 HttpServletResponse response,
+                                 Writer out) throws IOException {
+        System.out.println("testServletApi request:" + request + ",response = " + response);
+        out.write("Hello,world.");
+//        return SUCCESS;
+    }
+
+
 
 }

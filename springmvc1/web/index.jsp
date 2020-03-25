@@ -52,7 +52,7 @@
         <%-- address.province和address.city是级联属性，即属性的属性 --%>
         <input type="submit" value="Submit"/>
     </form>
-    <a href="requestMappingTest/testCookieValue">testCookieValue</a><br/>
+    <a href="requestMappingTest/testServletApi">testServletApi</a><br/>
     <a href="requestMappingTest/testCookieValue">testCookieValue</a><br/>
     <a href="requestMappingTest/testCookieValue">testCookieValue</a><br/>
   </body>
