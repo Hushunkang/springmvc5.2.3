@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HelloWorldHandler {
 
     @RequestMapping("/hello")
-    public String hello(){
+    public String hello() {
         return "success";
     }
 

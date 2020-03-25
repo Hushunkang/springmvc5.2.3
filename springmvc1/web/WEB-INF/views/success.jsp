@@ -11,12 +11,12 @@
     <title>success</title>
 </head>
 <body>
-    <h1>success page.</h1>
-    datetime:${requestScope.datetime}<br/>
-    names:${requestScope.names}<br/>
-    request user:${requestScope.user}<br/>
-    session user:${sessionScope.user}<br/>
-    request school:${requestScope.school}<br/>
-    session school:${sessionScope.school}<br/>
+<h1>success page.</h1>
+datetime:${requestScope.datetime}<br/>
+names:${requestScope.names}<br/>
+request user:${requestScope.user}<br/>
+session user:${sessionScope.user}<br/>
+request school:${requestScope.school}<br/>
+session school:${sessionScope.school}<br/>
 </body>
 </html>

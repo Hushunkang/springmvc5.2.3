@@ -8,6 +8,7 @@ package com.atguigu.springmvc.domain;
  */
 public class User {
 
+    private Integer userId;
     private String username;
     private String password;
     private int age;
@@ -19,6 +20,14 @@ public class User {
         this.password = password;
         this.age = age;
         this.email = email;
+    }
+
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
     public String getUsername() {
@@ -64,7 +73,8 @@ public class User {
     @Override
     public String toString() {
         return "User{" +
-                "username='" + username + '\'' +
+                "userId=" + userId +
+                ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 ", age=" + age +
                 ", email='" + email + '\'' +
