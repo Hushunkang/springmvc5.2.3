@@ -61,6 +61,7 @@
     1. 原始数据为：1, Tom, 123456, 18, tom@atguigu.com
     2. 假设密码这个数据是不能被修改的
     3. 表单回显，模拟操作直接在表单中填写对应的属性值
+    4. 注意此表单请求参数是不带有password这个参数滴
 --%>
 <form action="requestMappingTest/testModelAttribute" method="Post">
     <input type="hidden" name="userId" value="1"/>
@@ -72,7 +73,7 @@
     <br/>
     <input type="submit" value="Submit"/>
 </form>
-<a href="requestMappingTest/testCookieValue">testCookieValue</a><br/>
+<a href="requestMappingTest/testViewAndViewResolver">testViewAndViewResolver</a><br/>
 <a href="requestMappingTest/testCookieValue">testCookieValue</a><br/>
 <a href="requestMappingTest/testCookieValue">testCookieValue</a><br/>
 </body>
