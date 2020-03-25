@@ -85,4 +85,61 @@ public class RequestMappingTestHandler {
         return SUCCESS;
     }
 
+    /**
+     * 测试Rest风格的url get请求 表示查询
+     * @return
+     */
+    @RequestMapping(value="/testRest/{userId}",method=RequestMethod.GET)
+    public String testRestGet(@PathVariable(value="userId")Integer userId){
+        System.out.println("testRest get请求:" + userId);
+        return SUCCESS;
+    }
+
+    /**
+     * 测试Rest风格的url post请求 表示新增
+     * @return
+     */
+    @RequestMapping(value="/testRest",method=RequestMethod.POST)
+    public String testRestPost(){
+        System.out.println("testRest post请求");
+        return SUCCESS;
+    }
+
+    /**
+     * 测试Rest风格的url delete请求 表示删除
+     * @return
+     */
+    @RequestMapping(value="/testRest/{userId}",method=RequestMethod.DELETE)
+    public String testRestDelete(@PathVariable(value="userId")Integer userId){
+        System.out.println("testRest delete请求:" + userId);
+        return SUCCESS;
+    }
+
+    /**
+     * 测试Rest风格的url put请求 表示更新
+     * @return
+     */
+    @RequestMapping(value="/testRest/{userId}",method=RequestMethod.PUT)
+    public String testRestPut(@PathVariable(value="userId")Integer userId){
+        System.out.println("testRest put请求:" + userId);
+        return SUCCESS;
+    }
+
+    /**
+     * 总结Rest风格的url：
+     * Rest风格的url，以crud为例
+     * 新增： /order POST
+     * 删除: /order/1 DELETE delete?id=1
+     * 修改: /order/1 PUT update?id=1
+     * 获取: /order/1 GET get?id=1
+     *
+     * 如何发送DELETE请求或者PUT请求呢？
+     * 1.需要在web.xml中配置HiddenHttpMethodFilter过滤器
+     * 2.需要发送POST请求
+     * 3.需要在发送POST请求时携带一个name="_method"的隐藏域，值为DELETE或者PUT
+     *
+     * 在spring mvc的目标方法中如何得到id呢？
+     * 使用@PathVariable注解
+     */
+
 }

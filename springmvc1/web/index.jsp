@@ -20,6 +20,18 @@
     <a href="requestMappingTest/testRequestMethod">testRequestMethod</a><br/>
     <a href="requestMappingTest/testParamsAndHeaders?userId=1&age=18">testParamsAndHeaders</a><br/>
     <a href="requestMappingTest/testAntResourceUrl/xyz/abc">testAntResourceUrl</a><br/>
-    <a href="/requestMappingTest/testPathVariable/1">testPathVariable</a><br/>
+    <a href="requestMappingTest/testPathVariable/1">testPathVariable</a><br/>
+    <a href="requestMappingTest/testRest/1">testRest get请求</a>
+    <form action="requestMappingTest/testRest" method="post">
+        <input type="submit" value="testRest post请求"/>
+    </form>
+    <form action="requestMappingTest/testRest/1" method="post">
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="submit" value="testRest delete请求"/>
+    </form>
+    <form action="requestMappingTest/testRest/1" method="post">
+        <input type="hidden" name="_method" value="PUT">
+        <input type="submit" value="testRest put请求"/>
+    </form>
   </body>
 </html>
