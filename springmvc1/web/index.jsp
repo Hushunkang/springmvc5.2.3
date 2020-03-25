@@ -74,7 +74,8 @@
     <input type="submit" value="Submit"/>
 </form>
 <a href="requestMappingTest/testViewAndViewResolver">testViewAndViewResolver</a><br/>
-<a href="requestMappingTest/testCookieValue">testCookieValue</a><br/>
-<a href="requestMappingTest/testCookieValue">testCookieValue</a><br/>
+<a href="requestMappingTest/testView">testView</a><br/>
+<a href="requestMappingTest/testForward">testForward</a><br/>
+<a href="requestMappingTest/testRedirect">testRedirect</a><br/>
 </body>
 </html>

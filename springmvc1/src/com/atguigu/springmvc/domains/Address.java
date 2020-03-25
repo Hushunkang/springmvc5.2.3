@@ -1,4 +1,4 @@
-package com.atguigu.springmvc.domain;
+package com.atguigu.springmvc.domains;
 
 /**
  * @author hskBeginner Email：2752962035@qq.com

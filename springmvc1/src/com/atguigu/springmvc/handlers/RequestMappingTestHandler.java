@@ -1,6 +1,6 @@
 package com.atguigu.springmvc.handlers;
 
-import com.atguigu.springmvc.domain.User;
+import com.atguigu.springmvc.domains.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
@@ -315,6 +315,36 @@ public class RequestMappingTestHandler {
     public String testViewAndViewResolver(){
         System.out.println("testViewAndViewResolver...");
         return SUCCESS;
+    }
+
+    /**
+     * 自定义视图
+     * @return
+     */
+    @RequestMapping("/testView")
+    public String testView(){
+        System.out.println("testView...");
+        return "myView";
+    }
+
+    /**
+     * 请求转发
+     * @return
+     */
+    @RequestMapping("/testForward")
+    public String testForward(){
+        System.out.println("testForward");
+        return "forward:/index.jsp";
+    }
+
+    /**
+     * 请求重定向
+     * @return
+     */
+    @RequestMapping("/testRedirect")
+    public String testRedirect(){
+        System.out.println("testRedirect");
+        return "redirect:/index.jsp";
     }
 
 }
