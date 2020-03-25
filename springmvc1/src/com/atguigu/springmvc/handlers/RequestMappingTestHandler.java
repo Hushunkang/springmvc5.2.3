@@ -1,9 +1,10 @@
 package com.atguigu.springmvc.handlers;
 
+import com.atguigu.springmvc.domain.User;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
+
+import java.lang.reflect.Method;
 
 /**
  * @author hskBeginner Email：2752962035@qq.com
@@ -106,13 +107,22 @@ public class RequestMappingTestHandler {
     }
 
     /**
+     * 曲线救国：请求重定向，用于解决delete或者put请求405问题
+     * @return
+     */
+    @RequestMapping(value = "/toSuccess")
+    public String toSuccess() {
+        return SUCCESS;
+    }
+
+    /**
      * 测试Rest风格的url delete请求 表示删除
      * @return
      */
     @RequestMapping(value="/testRest/{userId}",method=RequestMethod.DELETE)
     public String testRestDelete(@PathVariable(value="userId")Integer userId){
         System.out.println("testRest delete请求:" + userId);
-        return SUCCESS;
+        return "redirect:/requestMappingTest/toSuccess";
     }
 
     /**
@@ -122,7 +132,7 @@ public class RequestMappingTestHandler {
     @RequestMapping(value="/testRest/{userId}",method=RequestMethod.PUT)
     public String testRestPut(@PathVariable(value="userId")Integer userId){
         System.out.println("testRest put请求:" + userId);
-        return SUCCESS;
+        return "redirect:/requestMappingTest/toSuccess";
     }
 
     /**
@@ -140,6 +150,55 @@ public class RequestMappingTestHandler {
      *
      * 在spring mvc的目标方法中如何得到id呢？
      * 使用@PathVariable注解
+     *
+     * 遇到的问题：https://blog.csdn.net/weixin_45165669/article/details/104617304
      */
+
+    /**
+     * @RequestParam注解用来映射请求参数
+     * value值表示请求参数名
+     * required表示该参数是必须的还是可选的，默认为true
+     * defaultValue用来设置请求参数的默认值
+     * @param userId
+     * @param age
+     * @return
+     */
+    @RequestMapping(value="/testRequestParam")
+    public String testRequestParam(@RequestParam(value="userId",required=true)Integer userId,
+                                   @RequestParam(value="age",required=false,defaultValue="0")/*Integer age*/int age){
+        System.out.println("testRequestParam: userId = " + userId + ",age = " + age);
+        return SUCCESS;
+    }
+
+    /**
+     * 了解一哈：映射请求头信息，用法同@RequestParam注解
+     */
+    @RequestMapping("/testRequestHeader")
+    public String testRequestHeader(@RequestHeader(value="Accept-Language")String al) {
+        System.out.println("testRequestHeader: Accept-Language:" + al);
+        return SUCCESS;
+    }
+
+    /**
+     * @CookieValue注解用来映射一个Cookie的值
+     * @param sessionId
+     * @return
+     */
+    @RequestMapping(value="/testCookieValue")
+    public String testCookieValue(@CookieValue(value="JSESSIONID")String sessionId){
+        System.out.println("testCookieValue sessionId:" + sessionId);
+        return SUCCESS;
+    }
+
+    /**
+     * spring mvc会按请求参数名和pojo属性名进行自动匹配，自动为pojo填充属性值（底层原理使用反射调用属性的set方法），并且支持级联属性
+     * 级联属性如：address.province、address.city等
+     * @return
+     */
+    @RequestMapping(value="/testPojo")
+    public String testPojo(User user){
+        System.out.println("testPojo user:" + user);
+        return SUCCESS;
+    }
 
 }
