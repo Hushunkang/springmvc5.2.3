@@ -11,6 +11,12 @@
     <title>spring mvc hello world</title>
   </head>
   <body>
-    <a href="hello">hello,world.</a>
+    <a href="helloWorld/hello">hello,world.</a><br/>
+    <a href="requestMappingTest/testRequestMapping">testRequestMapping</a><br/>
+<%--    <a href="requestMappingTest/testRequestMethod">testRequestMethod</a><br/>--%><%-- 超链接默认的请求类型是get请求 --%>
+    <form action="requestMappingTest/testRequestMethod" method="post">
+      <input type="submit" value="submit"/>
+    </form>
+    <a href="#">testRequestMethod</a><br/>
   </body>
 </html>
