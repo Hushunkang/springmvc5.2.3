@@ -54,6 +54,23 @@ public class RequestMappingTestHandler {
         return SUCCESS;
     }
 
+    /**
+     * 了解一哈：可以使用params属性和headers属性来更加精确标识请求映射
+     *          params属性和headers属性还可以支持简单的表达式
+     * @return
+     */
+    @RequestMapping(value="/testParamsAndHeaders",params={"userId","age=18"}/*,headers={"Accept-Language=zh-CN,zh;q=0.9"}*/)
+    public String testParamsAndHeaders(){
+        return SUCCESS;
+    }
 
+    /**
+     * 测试Ant风格的资源地址
+     * @return
+     */
+    @RequestMapping(value="/testAntResourceUrl/*/abc")
+    public String testAntResourceUrl(){
+        return SUCCESS;
+    }
 
 }

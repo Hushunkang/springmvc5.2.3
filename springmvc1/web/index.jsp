@@ -15,8 +15,10 @@
     <a href="requestMappingTest/testRequestMapping">testRequestMapping</a><br/>
 <%--    <a href="requestMappingTest/testRequestMethod">testRequestMethod</a><br/>--%><%-- 超链接默认的请求类型是get请求 --%>
     <form action="requestMappingTest/testRequestMethod" method="post">
-      <input type="submit" value="submit"/>
+        <input type="submit" value="submit"/>
     </form>
-    <a href="#">testRequestMethod</a><br/>
+    <a href="requestMappingTest/testRequestMethod">testRequestMethod</a><br/>
+    <a href="requestMappingTest/testParamsAndHeaders?userId=1&age=18">testParamsAndHeaders</a><br/>
+    <a href="requestMappingTest/testAntResourceUrl/xyz/abc">testAntResourceUrl</a><br/>
   </body>
 </html>
