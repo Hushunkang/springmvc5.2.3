@@ -20,5 +20,6 @@
     <a href="requestMappingTest/testRequestMethod">testRequestMethod</a><br/>
     <a href="requestMappingTest/testParamsAndHeaders?userId=1&age=18">testParamsAndHeaders</a><br/>
     <a href="requestMappingTest/testAntResourceUrl/xyz/abc">testAntResourceUrl</a><br/>
+    <a href="/requestMappingTest/testPathVariable/1">testPathVariable</a><br/>
   </body>
 </html>

@@ -1,6 +1,7 @@
 package com.atguigu.springmvc.handlers;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -70,6 +71,17 @@ public class RequestMappingTestHandler {
      */
     @RequestMapping(value="/testAntResourceUrl/*/abc")
     public String testAntResourceUrl(){
+        return SUCCESS;
+    }
+
+    /**
+     * 测试@PathVariable注解：可以用来映射URL中的占位符到业务方法的参数中
+     * 说明：spring mvc正是因为有此特性，才使得其支持rest风格的url
+     * @return
+     */
+    @RequestMapping(value="/testPathVariable/{userId}")
+    public String testPathVariable(@PathVariable(value="userId")Integer userId){
+        System.out.println("testPathVariable:" + userId);
         return SUCCESS;
     }
 
