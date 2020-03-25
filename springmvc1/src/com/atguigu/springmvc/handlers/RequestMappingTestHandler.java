@@ -3,12 +3,15 @@ package com.atguigu.springmvc.handlers;
 import com.atguigu.springmvc.domain.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.Writer;
-import java.lang.reflect.Method;
+import java.util.Arrays;
+import java.util.Date;
+import java.util.Map;
 
 /**
  * @author hskBeginner Email：2752962035@qq.com
@@ -231,6 +234,32 @@ public class RequestMappingTestHandler {
 //        return SUCCESS;
     }
 
+    /**
+     * 目标方法的返回值可以是ModelAndView类型
+     * 其中可以包含视图信息和模型数据信息
+     * 深入源码，浅出结论：spring mvc会把ModelAndView的model中数据放入到request域对象中
+     * @return
+     */
+    @RequestMapping("/testModelAndView")
+    public ModelAndView testModelAndView(){
+        ModelAndView modelAndView = new ModelAndView(SUCCESS);
 
+        //添加模型数据到ModelAndView中
+        modelAndView.addObject("datetime", new Date());
+
+        return modelAndView;
+    }
+
+    /**
+     * 目标方法可以添加Map类型（实际上也可以是Model类型或ModelMap类型）的参数
+     * @param map
+     * @return
+     */
+    @RequestMapping("/testMap")
+    public String testMap(Map<String, Object> map){
+        System.out.println(map.getClass());//class org.springframework.validation.support.BindingAwareModelMap
+        map.put("names",Arrays.asList("Tom","Jack","Rose"));
+        return SUCCESS;
+    }
 
 }

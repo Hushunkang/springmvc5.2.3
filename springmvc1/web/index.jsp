@@ -53,6 +53,8 @@
         <input type="submit" value="Submit"/>
     </form>
     <a href="requestMappingTest/testServletApi">testServletApi</a><br/>
+    <a href="requestMappingTest/testModelAndView">testModelAndView</a><br/>
+    <a href="requestMappingTest/testMap">testMap</a><br/>
     <a href="requestMappingTest/testCookieValue">testCookieValue</a><br/>
     <a href="requestMappingTest/testCookieValue">testCookieValue</a><br/>
   </body>
