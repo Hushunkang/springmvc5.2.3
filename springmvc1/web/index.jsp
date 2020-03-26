@@ -52,6 +52,7 @@
     <%-- address.province和address.city是级联属性，即属性的属性 --%>
     <input type="submit" value="Submit"/>
 </form>
+pageContext.request.contextPath:${pageContext.request.contextPath }<br/>
 <a href="requestMappingTest/testServletApi">testServletApi</a><br/>
 <a href="requestMappingTest/testModelAndView">testModelAndView</a><br/>
 <a href="requestMappingTest/testMap">testMap</a><br/>
