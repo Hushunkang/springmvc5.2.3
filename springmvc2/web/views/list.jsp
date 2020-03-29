@@ -12,7 +12,7 @@
 	优雅的REST风格的资源URL不希望带.html或.do等后缀的资源
 	若将DispatcherServlet请求映射配置为/，即拦截所有请求
 	则spring mvc将捕获web server的所有请求，包括静态资源的请求，spring mvc会将他们当成一个普通请求处理
-	因找不到对应处理器，导致错误
+	因找不到对应处理器（这里的处理器实际上就是我们所说的业务逻辑控制器，说白了就是找不到请求映射），导致错误
 	2.解决：在spring mvc的配置文件中配置mvc:default-servlet-handler标签即可
 	-->
 	<script type="text/javascript" src="scripts/jquery-1.9.1.min.js"></script>
