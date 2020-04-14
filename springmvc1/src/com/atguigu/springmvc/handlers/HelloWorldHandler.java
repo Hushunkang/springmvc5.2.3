@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @author hskBeginner Email：2752962035@qq.com
  * @version 1.0
  * @description
- * @create 2020年03月25日 13时41分19秒
+ * @create 2020年03月25日
  */
 @Controller
 @RequestMapping("/helloWorld")
